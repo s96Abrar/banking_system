@@ -16,8 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('transaction_type');
             $table->double('amount');
-            $table->double('fee');
+            $table->double('fee')->nullable();
             $table->date('date');
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

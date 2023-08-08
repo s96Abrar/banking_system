@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('account_type');
-            $table->double('balance');
+            $table->double('balance')->default(0);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->timestamps();
         });
     }
 
